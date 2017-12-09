@@ -14,14 +14,22 @@ def load_csv(filename):
 		for row in csv_reader:
 			if not row:
 				continue
-		dataset.append(row)
+			dataset.append(row)
 	return dataset
 
 seed(2)
 filename = "mushrooms.csv"
 dataset = load_csv(filename)
-print("first line of dataset %s" %dataset[0]) #use %variable means %s = %variable
-print("first element of dataset %c" %dataset[0][0])
+counter = 0
+for row in dataset:
+	#print("first line of dataset %s" %row) #use %variable means %s = %variable
+	counter=counter+1
+for num in range(100):
+	print("test %s" %dataset[num])
+print("total line is %d" %counter)
 total_feature = int((len(dataset[0])-1))
 print("total feature is %d" %  total_feature)
+
+n_feature = 10 #number of feature in each random forest tree 
+
 
